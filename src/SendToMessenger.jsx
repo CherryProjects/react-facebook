@@ -12,6 +12,7 @@ type Props = {
   dataRef?: string,
   size?: string,
   handleParse: Function,
+  ctaText?: string,
 };
 
 class SendToMessenger extends PureComponent<Props> {
@@ -20,6 +21,7 @@ class SendToMessenger extends PureComponent<Props> {
     size: undefined,
     dataRef: undefined,
     children: undefined,
+    ctaText: 'GET_THIS_IN_MESSENGER',
   };
 
   componentDidUpdate() {
@@ -35,6 +37,7 @@ class SendToMessenger extends PureComponent<Props> {
       children,
       dataRef,
       size,
+      ctaText
     } = this.props;
 
     return (
@@ -45,6 +48,7 @@ class SendToMessenger extends PureComponent<Props> {
         data-color={color}
         data-size={size}
         data-ref={dataRef}
+        cta_text={ctaText}
       >
         {children}
       </div>
